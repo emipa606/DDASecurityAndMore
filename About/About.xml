@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>DDA Security and More (Continued)</name>
+  	<packageId>Mlie.DDASecurityAndMore</packageId>
+	<author>Mlie</author>
+	<url>https://github.com/emipa606/DDASecurityAndMore</url>
+	<supportedVersions>
+		<li>1.0</li>
+		<li>1.1</li>
+	</supportedVersions>
+	<modDependencies />
+	<loadAfter />
+	<description>Update of James76543s mod for RimWorld 1.1
+https://steamcommunity.com/sharedfiles/filedetails/?id=1356331773
+with the turrets from the original mod from DaemonDeathAngel
+https://steamcommunity.com/sharedfiles/filedetails/?id=892434137
+
+[img]https://raw.githubusercontent.com/emipa606/RimWorld-Wrapper/master/Notice.png[/img]
+
+Support-chat:
+https://discord.gg/SuhwVpM
+
+Non-steam version:
+https://github.com/emipa606/DDASecurityAndMore
+	
+--- James76543s Description ---
+I love the walls from this mod, so I updated it to V1.0 version. I left out the turrets (couldn't figure out how to update them, and I feel that More Vanilla Turrets handles this a lot more nicely anyway).
+
+7/28/2019 I changed the recipe (to require some chemfuel) and changed balance around a little so reinforced walls are slightly less expensive that four regular walls back to back, but at the cost of greater work.
+
+For V1.0, I made some changes to be aware of. I removed the coolers and heaters, I modified some minor settings for the walls, and I remove the custom workshop table completed. You can now make reinforced plates from the smelter, no need for an extra workshop table! I also added embrasures that are stronger than normal and have a custom texture.
+
+--- Original Description ---
+Hey, Onesan, lets mine through this idiots puny wall and lay waste to everyone and everything within!
+
+
+                                         Added Content                          
+
+Re-Inforced Walls                    |  Requires Steel Plates
+Blast Door                           |  Requires Steel Plates
+Re-Inforced Manned Shotgun Turret    |  Requires Steel Plates
+Re-Inforced Manned Sniper Turret     |  Requires Steel Plates
+Re-Inforced Manned Gattling Turret   |  Requires Steel Plates
+Barbed Wire                          |  Does Not Require Plates
+Fences                               |  Does Not Require Plates
+
+                                         Known Issues
+
+Currently No Known Mod Conflicts
+
+Update Error:
+With the recent update, I broke some peoples saves by changing def names, if you are recieving errors about missing def names, just place down a new metal working table and remove the old one, that should fix your errors on save and reload. If you had wood re-inforced walls, you will have to create a new game in order to use the mod, as wooden reinforced walls were removed, and will cause saves to fail.
+
+Report a conflict in the "Bug Report" Thread.
+
+                                         Change Log
+
+4-02-2017 : 16:45 Changelog
+Wood Walls No Longer Capable of Being Reinforced
+Cooler Material Cost Fixed
+Turrets Added
+Reinforced Wall Flamability Removed
+Fixed Conflict With http://steamcommunity.com/sharedfiles/filedetails/?id=756216922.
+
+By massive request, the description has been changed to somewhat further explain what the mod does!
+
+Thanks you to BaRKy from youtube for the awesome Mod Showcase!
+Go and show this guy some love.
+https://www.youtube.com/user/BaRKy1911
+
+Wall and Fence textures by mrofa and Abrexus</description>	
+</ModMetaData>
