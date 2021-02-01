@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!--=============== Shotgun Mannable Turret ===============-->
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>ShotGunTurret</defName>
+    <label>Shotgun Turret</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Security/MannedGun_bottom</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Security/SentryShotgun_UI</uiIconPath>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>True</hasInteractionCell>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>40</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>2</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <description>A Sniper Rifle turret that can be manned to fire at nearby enemies.
+Range:	 16
+Damage:  20
+Burst:	  1</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>150</Steel>
+	  <DDA_ReinforcedPlate>7</DDA_ReinforcedPlate>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <specialDisplayRadius>16</specialDisplayRadius>
+    <building>
+		<ai_combatDangerous>true</ai_combatDangerous>
+		<turretGunDef>ShotGunManned</turretGunDef>
+      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+    </building>
+    <researchPrerequisites>
+      <li>ReinforcedShotgunTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>ShotGunManned</defName>
+    <label>Manned Shotgun</label>
+    <graphicData>
+      <texPath>Security/SentryShotgun_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <menuHidden>true</menuHidden>
+    <description>Jury-rigged gun attached to a turret.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>0.80</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>0.9</warmupTime>
+        <range>16</range>
+		<defaultProjectile>Bullet_ShotgunManned</defaultProjectile>
+		<soundCast>Shot_Shotgun</soundCast>
+		<soundCastTail>GunTail_Heavy</soundCastTail>
+		<muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+    <!--=============== Gattling Mannable Turret ===============-->
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>GattlingGunTurret</defName>
+    <label>Gattling Gun Turret</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Security/MannedGun_bottom</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Security/SentryGatling_UI</uiIconPath>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>True</hasInteractionCell>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>200</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>2</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <description>A Gattling Gun turret that can be manned to fire at nearby enemies.
+Range:	 28
+Damage:  8
+Burst:	  6</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>200</Steel>
+	  <DDA_ReinforcedPlate>7</DDA_ReinforcedPlate>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <specialDisplayRadius>28</specialDisplayRadius>
+    <building>
+		<ai_combatDangerous>true</ai_combatDangerous>
+		<turretGunDef>GattlingGunManned</turretGunDef>
+      <turretBurstCooldownTime>5</turretBurstCooldownTime>
+    </building>
+    <researchPrerequisites>
+      <li>ReinforcedGattlingTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>GattlingGunManned</defName>
+    <label>Manned Shotgun</label>
+    <graphicData>
+      <texPath>Security/SentryGatling_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <menuHidden>true</menuHidden>
+    <description>Jury-rigged gun attached to a turret.</description>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>0.80</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_GattlingManned</defaultProjectile>
+			<warmupTime>1.4</warmupTime>
+			<range>28</range>
+			<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+			<burstShotCount>6</burstShotCount>
+			<soundCast>Shot_Minigun</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+      <!--=============== Sniper Mannable Turret ===============-->
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>SniperGunTurret</defName>
+    <label>Sniper Gun Turret</label>
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <texPath>Security/MannedGun_bottom</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Security/SentryGunSniper_UI</uiIconPath>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <hasInteractionCell>True</hasInteractionCell>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>100</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>40</fuelCapacity>
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.75</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <fuelMultiplier>2</fuelMultiplier>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <outOfFuelMessage>Cannot shoot: Needs new barrel</outOfFuelMessage>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <description>A Sniper Rifle turret that can be manned to fire at nearby enemies.
+Range:	 45
+Damage:  40
+Burst:	  1</description>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>150</Steel>
+	  <DDA_ReinforcedPlate>7</DDA_ReinforcedPlate>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <specialDisplayRadius>45</specialDisplayRadius>
+    <building>
+		<ai_combatDangerous>true</ai_combatDangerous>
+		<turretGunDef>SniperGunManned</turretGunDef>
+      <turretBurstCooldownTime>4</turretBurstCooldownTime>
+    </building>
+    <researchPrerequisites>
+      <li>ReinforcedSniperTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>SniperGunManned</defName>
+		<label>Manned Sniper Turret</label>
+		<graphicData>
+			<texPath>Security/SentryGunSniper_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Industrial</techLevel>
+		<menuHidden>true</menuHidden>
+		<description>A Sniper Rifle mounted to a tri-pod, mannable by those capable of violence.</description>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<statBases>
+			<AccuracyTouch>0.95</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.65</AccuracyMedium>
+			<AccuracyLong>0.25</AccuracyLong>
+			<RangedWeapon_Cooldown>0.80</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>TurretGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_SniperManned</defaultProjectile>
+				<warmupTime>4.0</warmupTime>
+				<range>45</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+
+      <!--=============== Barbed Wire ===============-->
+
+	<ThingDef Name="WireBuildingBase" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<statBases>
+			<SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
+  </ThingDef>	
+
+	<ThingDef ParentName="WireBuildingBase">
+		<defName>BarbedWire</defName>
+		<label>barbed wire</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<description>Simple defensive structure that reduces movement and provides no cover.</description>
+		<designationCategory>Security</designationCategory>
+		<graphicData>
+			<texPath>Security/BarbedWire/BarbedWire_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom2</li>
+			</linkFlags>
+		</graphicData>
+		<uiIconPath>Security/BarbedWire/BarbedWire_Icon</uiIconPath>
+		<constructEffect>ConstructMetal</constructEffect>
+		<repairEffect>ConstructMetal</repairEffect>
+		<altitudeLayer>Building</altitudeLayer>
+		<building>
+			<isInert>true</isInert>
+			<blueprintGraphicData>
+				<texPath>Security/BarbedWire/BarbedWire_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<statBases>
+			<Beauty>-2</Beauty>	
+			<MaxHitPoints>225</MaxHitPoints>
+			<WorkToMake>200</WorkToMake>
+			<Flammability>0</Flammability>
+		</statBases>
+		<damageMultipliers>
+			<li>
+				<damageDef>Bomb</damageDef>
+				<multiplier>3</multiplier>
+			</li>
+		</damageMultipliers>
+		<costList>
+			<Steel>4</Steel>
+		</costList>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<pathCostIgnoreRepeat>false</pathCostIgnoreRepeat>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.1</fillPercent>
+		<coversFloor>false</coversFloor>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<holdsRoof>false</holdsRoof>
+		<staticSunShadowHeight>0.1</staticSunShadowHeight>
+		<blockLight>false</blockLight>
+		<researchPrerequisites>
+			<li>BarbedWire</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+</Defs>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ResearchProjectDef[defName="BarbedWire"] |
+                        Defs/ThingDef[defName="BarbedWire" and @ParentName="WireBuildingBase"]</xpath>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="BarbedWire"]/graphicData/texPath</xpath>
+                    <value>
+                        <texPath>Security/BarbedWire/BarbedWire_Atlas</texPath>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="BarbedWire"]/building/blueprintGraphicData/texPath</xpath>
+                    <value>
+                        <texPath>Security/BarbedWire/BarbedWire_Blueprint_Atlas</texPath>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="BarbedWire"]/uiIconPath</xpath>
+                    <value>
+                        <uiIconPath>Security/BarbedWire/BarbedWire_Icon</uiIconPath>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

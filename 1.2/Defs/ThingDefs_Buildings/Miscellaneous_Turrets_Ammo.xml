@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	<!-- ================ Mannable Turret Ammo ============== -->
+
+	<!-- ========== Shotgun ========== -->
+	<ThingDef ParentName="BaseBullet">
+	<defName>Bullet_ShotgunManned</defName>
+	<label>Shotgun Bullet</label>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<projectile>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>20</damageAmountBase>
+		<speed>55</speed>
+	</projectile>
+	</ThingDef>
+	
+	
+	<!-- ========== Gattling ========== -->
+	<ThingDef ParentName="BaseBullet">
+	<defName>Bullet_GattlingManned</defName>
+	<label>Gattling Gun Bullet</label>
+	<graphicData>
+		<texPath>Things/Projectile/Bullet_Small</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<projectile>
+		<damageDef>Bullet</damageDef>
+		<damageAmountBase>8</damageAmountBase>
+		<speed>70</speed>
+	</projectile>
+	</ThingDef>
+
+	<!-- ========== Sniper ========== -->
+	<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SniperManned</defName>
+    <label>Sniper Rifle Bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+
+
+</Defs>
